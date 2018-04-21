@@ -1,7 +1,7 @@
 import React from 'react';
 var { View, StyleSheet, Alert } = require('react-native');
 
-import {Button} from 'react-native-elements'
+import {Button, ButtonGroup} from 'react-native-elements'
 import {Actions} from 'react-native-router-flux';
 import {connect} from 'react-redux';
 
@@ -35,6 +35,18 @@ class Home extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <View style={styles.tabbar}>
+                    <ButtonGroup
+                        buttons={['ENTRENAMIENTO', 'ALIMENTACIÓN', 'EXPLORAR']}
+                        containerStyle={styles.buttonTabBar}
+                        selectedIndex={0}
+                        textStyle={styles.buttonTextTabBar}
+                        containerBorderRadius={0}
+                        innerBorderStyle={{borderStyle: "hidden"}}
+                        selectedButtonStyle={{backgroundColor: "#f7f7f7"}}
+                        selectedTextStyle={{color: "#1c97cc"}}/>
+                </View>
+
                 <Button
                     raised
                     borderRadius={4}

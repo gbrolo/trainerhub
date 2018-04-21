@@ -24,6 +24,36 @@ const styles = StyleSheet.create({
     buttonContainer:{
         justifyContent:"center",
         alignItems:"center"
+    },
+
+    containerView:{
+        marginVertical: 20
+    },
+
+    button:{
+      backgroundColor: "#1c97cc"
+    },
+
+    buttonText:{
+        fontSize: fontSize.regular + 2,
+        fontFamily: fontFamily.medium
+    },
+
+    tabbar:{
+        backgroundColor: "#f7f7f7",
+        margin: 0,
+        padding: 0
+    },
+
+    buttonTextTabBar:{
+        fontSize: fontSize.small,
+        fontFamily: fontFamily.regular
+    },
+
+    buttonTabBar:{
+        backgroundColor: "#f7f7f7",
+        borderWidth: 0,
+        borderRadius: 0
     }
 });
 

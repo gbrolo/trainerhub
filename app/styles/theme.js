@@ -9,7 +9,8 @@ const color = {
     light_grey: "#eaeaea",
     grey: "#ccc",
     red: "red",
-    underlayColor: "#ddd"
+    underlayColor: "#ddd",
+    bluetheme: "#1c97cc"
 }
 
 const fontSize = {
