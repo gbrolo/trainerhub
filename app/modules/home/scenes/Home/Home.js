@@ -38,7 +38,7 @@ class Home extends React.Component {
                 <Button
                     raised
                     borderRadius={4}
-                    title={'LOG OUT'}
+                    title={'CERRAR SESIÓN'}
                     containerViewStyle={[styles.containerView]}
                     buttonStyle={[styles.button]}
                     textStyle={styles.buttonText}

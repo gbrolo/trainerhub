@@ -11,8 +11,8 @@ import Form from "../../components/Form"
 const fields = [
     {
         key: 'email',
-        label: "Email Address",
-        placeholder: "Email Address",
+        label: "Correo electrónico",
+        placeholder: "Correo electrónico",
         autoFocus: false,
         secureTextEntry: false,
         value: "",
@@ -20,8 +20,8 @@ const fields = [
     },
     {
         key: 'password',
-        label: "Password",
-        placeholder: "Password",
+        label: "Contraseña",
+        placeholder: "Contraseña",
         autoFocus: false,
         secureTextEntry: true,
         value: "",
@@ -29,8 +29,8 @@ const fields = [
     },
     {
         key: 'confirm_password',
-        label: "Confirm Password",
-        placeholder: "Confirm Password",
+        label: "Confirmar contraseña",
+        placeholder: "Confirmar contraseña",
         autoFocus: false,
         secureTextEntry: true,
         value: "",
@@ -86,7 +86,7 @@ class Register extends React.Component {
                 <Form fields={fields}
                       showLabel={false}
                       onSubmit={this.onSubmit}
-                      buttonTitle={"SIGN UP"}
+                      buttonTitle={"INICIAR SESIÓN"}
                       error={this.state.error}/>
         );
     }

@@ -12,8 +12,8 @@ const {login} = auth;
 const fields = [
     {
         key: 'email',
-        label: "Email Address",
-        placeholder: "Email Address",
+        label: "Correo electrónico",
+        placeholder: "Correo electrónico",
         autoFocus: false,
         secureTextEntry: false,
         value: "",
@@ -21,8 +21,8 @@ const fields = [
     },
     {
         key: 'password',
-        label: "Password",
-        placeholder: "Password",
+        label: "Contraseña",
+        placeholder: "Contraseña",
         autoFocus: false,
         secureTextEntry: true,
         value: "",
@@ -82,7 +82,7 @@ class Login extends React.Component {
             <Form fields={fields}
                   showLabel={false}
                   onSubmit={this.onSubmit}
-                  buttonTitle={"LOG IN"}
+                  buttonTitle={"INICIAR SESIÓN"}
                   error={this.state.error}
                   onForgotPassword={this.onForgotPassword}/>
         );

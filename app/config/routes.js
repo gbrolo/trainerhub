@@ -46,14 +46,14 @@ export default class extends React.Component {
                        backButtonTintColor={color.black}>
                     <Stack key="Auth" initial={!this.state.isLoggedIn}>
                         <Scene key="Welcome" component={Welcome} title="" initial={true} hideNavBar/>
-                        <Scene key="Register" component={Register} title="Register" back/>
-                        <Scene key="CompleteProfile" component={CompleteProfile} title="Select Username" back={false}/>
-                        <Scene key="Login" component={Login} title="Login"/>
-                        <Scene key="ForgotPassword" component={ForgotPassword} title="Forgot Password"/>
+                        <Scene key="Register" component={Register} title="Registro" back/>
+                        <Scene key="CompleteProfile" component={CompleteProfile} title="Complete su perfil" back={false}/>
+                        <Scene key="Login" component={Login} title="Iniciar sesión"/>
+                        <Scene key="ForgotPassword" component={ForgotPassword} title="Recuperar contraseña"/>
                     </Stack>
 
                     <Stack key="Main" initial={this.state.isLoggedIn}>
-                        <Scene key="Home" component={Home} title="Home" initial={true} type={ActionConst.REPLACE}/>
+                        <Scene key="Home" component={Home} title="Inicio" initial={true} type={ActionConst.REPLACE}/>
                     </Stack>
                 </Scene>
             </Router>

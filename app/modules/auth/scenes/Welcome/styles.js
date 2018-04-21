@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     },
 
     button:{
-        backgroundColor: "#FF553F",
+        backgroundColor: "#1c97cc",
         height: normalize(55)
     },
 
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
 
     signInText:{
         fontSize: fontSize.regular,
-        color: "#FF553F",
+        color: "#1c97cc",
         fontFamily: fontFamily.medium
     },
 

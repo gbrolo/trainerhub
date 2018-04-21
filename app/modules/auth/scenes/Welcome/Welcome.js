@@ -57,7 +57,7 @@ class Welcome extends React.Component {
                                 raised
                                 button
                                 type='facebook'
-                                title='SIGN UP WITH FACEBOOK'
+                                title='REGISTRARME CON FACEBOOK'
                                 iconSize={19}
                                 style={[styles.containerView, styles.socialButton]}
                                 fontStyle={styles.buttonText}
@@ -66,14 +66,14 @@ class Welcome extends React.Component {
                             <View style={styles.orContainer}>
                                 <Divider style={styles.divider} />
                                 <Text style={styles.orText}>
-                                    Or
+                                    O bien...
                                 </Text>
                             </View>
 
                             <Button
                                 raised
                                 borderRadius={4}
-                                title={'SIGN UP WITH E-MAIL'}
+                                title={'REGISTRARME CON CORREO'}
                                 containerViewStyle={[styles.containerView]}
                                 buttonStyle={[styles.button]}
                                 textStyle={styles.buttonText}
@@ -81,12 +81,12 @@ class Welcome extends React.Component {
                         </View>
                         <View style={styles.bottom}>
                             <Text style={styles.bottomText}>
-                                Already have an account?
+                                Ya tienes una cuenta?
                             </Text>
 
                             <TouchableOpacity onPress={Actions.Login}>
                                 <Text style={styles.signInText}>
-                                    Sign in
+                                    Iniciar sesión
                                 </Text>
                             </TouchableOpacity>
                         </View>

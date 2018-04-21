@@ -10,12 +10,39 @@ import Form from "../../components/Form"
 const fields = [
     {
         key: 'username',
-        label: "Username",
-        placeholder: "Username",
+        label: "Nombre",
+        placeholder: "Ingrese su nombre",
         autoFocus: false,
         secureTextEntry: false,
         value: "",
         type: "text"
+    },
+    {
+        key: 'age',
+        label: "Edad",
+        placeholder: "Ingrese su edad",
+        autoFocus: false,
+        secureTextEntry: false,
+        value: "",
+        type: "text"
+    },
+    {
+        key: 'weight',
+        label: "Peso",
+        placeholder: "Ingrese su peso en libras",
+        autoFocus: false,
+        secureTextEntry: false,
+        value: "",
+        type: "number"
+    },
+    {
+        key: 'height',
+        label: "Estatura",
+        placeholder: "Ingrese su estatura en centímetros",
+        autoFocus: false,
+        secureTextEntry: false,
+        value: "",
+        type: "number"
     }
 ];
 
@@ -70,7 +97,7 @@ class CompleteProfile extends React.Component {
                 <Form fields={fields}
                       showLabel={false}
                       onSubmit={this.onSubmit}
-                      buttonTitle={"CONTINUE"}
+                      buttonTitle={"CONTINUAR"}
                       error={this.state.error}/>
         );
     }

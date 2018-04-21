@@ -102,7 +102,7 @@ class Form extends React.Component {
                     {
                         this.props.onForgotPassword !== null &&
                         <Text style={styles.forgotText} onPress={onForgotPassword}>
-                            Forgot password?</Text>
+                            Olvidó su contraseña?</Text>
                     }
 
                 </View>

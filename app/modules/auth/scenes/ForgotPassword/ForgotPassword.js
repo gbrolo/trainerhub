@@ -11,8 +11,8 @@ import Form from "../../components/Form"
 const fields = [
     {
         key:'email',
-        label: "Email Address",
-        placeholder:"Email",
+        label: "Correo electrónico",
+        placeholder:"Correo electrónico",
         autoFocus:false,
         secureTextEntry:false,
         value: "",
@@ -44,7 +44,7 @@ class ForgotPassword extends React.Component {
     }
 
     onSuccess() {
-        alert("Password Reminder Sent")
+        alert("Se envió la información para recuperar su contraseña")
         Actions.pop();
     }
 
@@ -67,7 +67,7 @@ class ForgotPassword extends React.Component {
         return (
                 <Form fields={fields}
                       onSubmit={this.onSubmit}
-                      buttonTitle={"SUBMIT"}
+                      buttonTitle={"ENVIAR"}
                       error={this.state.error}/>
         );
     }
