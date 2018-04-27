@@ -32,6 +32,11 @@ class Home extends React.Component {
         Alert.alert('Oops!', error.message);
     }
 
+    changeScreen(selectedIndex) {
+
+    }
+
+
     render() {
         return (
             <View style={styles.container}>
@@ -40,6 +45,7 @@ class Home extends React.Component {
                         buttons={['ENTRENAMIENTO', 'ALIMENTACIÓN', 'EXPLORAR']}
                         containerStyle={styles.buttonTabBar}
                         selectedIndex={0}
+                        onPress={this.changeScreen}
                         textStyle={styles.buttonTextTabBar}
                         containerBorderRadius={0}
                         innerBorderStyle={{borderStyle: "hidden"}}
