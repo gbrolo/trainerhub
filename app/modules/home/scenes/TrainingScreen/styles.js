@@ -27,11 +27,19 @@ const styles = StyleSheet.create({
     },
 
     containerView:{
-        marginVertical: 20
+        marginTop: 20
     },
 
     button:{
       backgroundColor: "#1c97cc"
+    },
+
+    buttonStart:{
+      backgroundColor: "#16ad25"
+    },
+
+    buttonRestart:{
+      backgroundColor: "#ad114f"
     },
 
     buttonText:{
@@ -39,25 +47,20 @@ const styles = StyleSheet.create({
         fontFamily: fontFamily.medium
     },
 
-    tabbar:{
-        backgroundColor: "#f7f7f7",
-        margin: 0,
-        padding: 0
+    infoContainer: {
+        backgroundColor: "#f0f0f0",
+        margin: 20,
+        padding: 20
     },
 
-    buttonTextTabBar:{
-        fontSize: fontSize.small,
-        fontFamily: fontFamily.regular
+    titleText: {
+        fontSize: fontSize.regular + 4,
+        fontFamily: fontFamily.bold,
+        textAlign: "center"
     },
 
-    buttonTabBar:{
-        backgroundColor: "#f7f7f7",
-        borderWidth: 0,
-        borderRadius: 0
-    },
-
-    trainingList:{
-      
+    infoText: {
+        textAlign: "justify"
     }
 });
 

@@ -9,18 +9,6 @@ const styles = StyleSheet.create({
         flex:1
     },
 
-    bottomContainer:{
-        backgroundColor:"white",
-        paddingVertical: padding * 3,
-        shadowColor: "#000000",
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        shadowOffset: {
-            height: 1,
-            width: 0
-        }
-    },
-
     buttonContainer:{
         justifyContent:"center",
         alignItems:"center"
@@ -39,26 +27,34 @@ const styles = StyleSheet.create({
         fontFamily: fontFamily.medium
     },
 
-    tabbar:{
-        backgroundColor: "#f7f7f7",
-        margin: 0,
-        padding: 0
+    infoContainer: {
+        backgroundColor: "#f0f0f0",
+        margin: 20,
+        padding: 20
     },
 
-    buttonTextTabBar:{
-        fontSize: fontSize.small,
-        fontFamily: fontFamily.regular
+    commentsContainer: {
+        backgroundColor: "#f3f3f3",
+        padding: 10,
+        marginTop: 20
     },
 
-    buttonTabBar:{
-        backgroundColor: "#f7f7f7",
-        borderWidth: 0,
-        borderRadius: 0
+    titleText: {
+        fontSize: fontSize.regular + 4,
+        fontFamily: fontFamily.bold,
+        textAlign: "center"
     },
 
-    trainingList:{
-      
+    subtText: {
+        fontSize: fontSize.regular + 2,
+        fontFamily: fontFamily.medium,
+        marginTop: 10
+    },
+
+    infoText: {
+        textAlign: "justify"
     }
+
 });
 
 export default styles;

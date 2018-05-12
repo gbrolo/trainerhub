@@ -7,8 +7,8 @@ import {connect} from 'react-redux';
 
 import styles from "./styles"
 
-import { actions as auth, theme } from "../../../auth/index"
-const { signOut } = auth;
+import { actions as home, theme } from "../../../home/index"
+const { signOut } = home;
 
 const { color } = theme;
 
@@ -18,6 +18,7 @@ class Alimentation extends React.Component {
         this.state = { }
 
         this.onSignOut = this.onSignOut.bind(this);
+        this.onChangeScreen = this.onChangeScreen.bind(this);
     }
 
     onSignOut() {
@@ -32,8 +33,14 @@ class Alimentation extends React.Component {
         Alert.alert('Oops!', error.message);
     }
 
-    changeScreen(selectedIndex) {
-
+    onChangeScreen(selectedIndex) {
+        if (selectedIndex === 0) {
+            Actions.Home()
+        } else if (selectedIndex === 1) {
+            Actions.Alimentation()
+        } else if (selectedIndex === 2) {
+            //pending
+        }
     }
 
     render() {
@@ -44,7 +51,7 @@ class Alimentation extends React.Component {
                       buttons={['ENTRENAMIENTO', 'ALIMENTACIÓN', 'EXPLORAR']}
                       containerStyle={styles.buttonTabBar}
                       selectedIndex={1}
-                      onPress={this.changeScreen}
+                      onPress={this.onChangeScreen}
                       textStyle={styles.buttonTextTabBar}
                       containerBorderRadius={0}
                       innerBorderStyle={{borderStyle: "hidden"}}
@@ -56,4 +63,4 @@ class Alimentation extends React.Component {
     }
 }
 
-export default connect(null, { signOut })(Alimentation);
+export default connect(null)(Alimentation);

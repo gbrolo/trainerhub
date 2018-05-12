@@ -16,6 +16,9 @@ export default class App extends Component {
         super();
         this.state = {
             isReady: false,
+            isScreenTraining: true,
+            isScreenAlimentation: false,
+            isScreenExplore: false
         }
     }
 

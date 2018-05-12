@@ -31,6 +31,7 @@
     "react-native-redux-listener": "^0.3.0",
     "react-native-router-flux": "^4.0.0-beta.28",
     "react-native-size-matters": "^0.1.0",
+    "react-native-stopwatch-timer": "^0.0.20",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"

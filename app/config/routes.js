@@ -1,5 +1,7 @@
 import React from 'react';
 import { Scene, Router, ActionConst, Stack, Modal, Tabs } from 'react-native-router-flux';
+import { AsyncStorage } from 'react-native';
+import {connect} from 'react-redux';
 
 //Splash Component
 import Splash from '../components/Splash/Splash';
@@ -12,6 +14,8 @@ import Login from '../modules/auth/scenes/Login';
 import ForgotPassword from '../modules/auth/scenes/ForgotPassword';
 import Home from '../modules/home/scenes/Home';
 import Alimentation from '../modules/home/scenes/Alimentation';
+import ShowTraining from '../modules/home/scenes/ShowTraining';
+import TrainingScreen from '../modules/home/scenes/TrainingScreen';
 
 //Import Store, actions
 import store from '../redux/store'
@@ -19,25 +23,33 @@ import { checkLoginStatus } from "../modules/auth/actions";
 
 import { color, navTitleStyle } from "../styles/theme";
 
-export default class extends React.Component {
-    constructor() {
-        super();
+import { actions as auth, theme } from "../modules/auth/index"
+import { actions as home } from "../modules/home/index"
+const { signOut } = auth;
+const { switchToTraining, switchToAlimentation, switchToExplore } = home;
+
+class routes extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log('logging props from constructor', this.props);
         this.state = {
-            isReady: false,
-            isLoggedIn: false
+            isReady: false
         }
     }
 
     componentDidMount() {
         let _this = this;
         store.dispatch(checkLoginStatus((isLoggedIn) => {
-            _this.setState({isReady: true, isLoggedIn});
+            AsyncStorage.setItem('screenState', 'training');
+            _this.setState({isReady: true, isLoggedIn, isScreenTraining: true});
         }));
     }
 
     render() {
         if (!this.state.isReady)
             return <Splash/>
+
+        console.log('props from render', this.props);
 
         return (
             <Router>
@@ -56,11 +68,15 @@ export default class extends React.Component {
                     </Stack>
 
                     <Stack key="Main" initial={this.state.isLoggedIn}>
-                        <Scene key="Home" component={Home} title="Entrenamiento" initial={true} type={ActionConst.REPLACE}/>
-                        <Scene key="Alimentation" component={Alimentation} title="Alimentacion" />
+                        <Scene key="Home" component={Home} title="Entrenamiento" initial={true} back={false}/>
+                        <Scene key="Alimentation" component={Alimentation} title="Alimentación" back={false}/>
+                        <Scene key="ShowTraining" component={ShowTraining} title="Información del entrenamiento"/>
+                        <Scene key="TrainingScreen" component={TrainingScreen} title="En entrenamiento"/>
                     </Stack>
                 </Scene>
             </Router>
         )
     }
 }
+
+export default connect(null, { signOut })(routes);
