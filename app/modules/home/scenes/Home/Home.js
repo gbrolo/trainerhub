@@ -33,6 +33,12 @@ class Home extends React.Component {
                     treps: 20,
                     tsets: 2
                 }
+            ],
+            plans: [
+                {
+                    pname: 'Proteina',
+                    pdescription: 'Tomarse un shake'
+                }
             ]
         }
 
@@ -57,7 +63,7 @@ class Home extends React.Component {
         if (selectedIndex === 0) {
             Actions.Home()
         } else if (selectedIndex === 1) {
-            Actions.Alimentation()
+            Actions.Alimentation({ plans: this.state.plans })
         } else if (selectedIndex === 2) {
             // pending
         }

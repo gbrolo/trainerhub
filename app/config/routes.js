@@ -16,6 +16,7 @@ import Home from '../modules/home/scenes/Home';
 import Alimentation from '../modules/home/scenes/Alimentation';
 import ShowTraining from '../modules/home/scenes/ShowTraining';
 import TrainingScreen from '../modules/home/scenes/TrainingScreen';
+import ShowPlan from '../modules/home/scenes/ShowPlan';
 
 //Import Store, actions
 import store from '../redux/store'
@@ -72,6 +73,7 @@ class routes extends React.Component {
                         <Scene key="Alimentation" component={Alimentation} title="Alimentación" back={false}/>
                         <Scene key="ShowTraining" component={ShowTraining} title="Información del entrenamiento"/>
                         <Scene key="TrainingScreen" component={TrainingScreen} title="En entrenamiento"/>
+                        <Scene key="ShowPlan" component={ShowPlan} title="Plan alimenticio"/>
                     </Stack>
                 </Scene>
             </Router>
