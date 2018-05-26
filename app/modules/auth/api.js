@@ -4,7 +4,7 @@ import { auth, database, provider } from "../../config/firebase";
 export function register(data, callback) {
     const { email, password } = data;
     auth.createUserWithEmailAndPassword(email, password)
-        .then((user) => callback(true, user, null))
+        .then((resp) => callback(true, resp.user, null))
         .catch((error) => callback(false, null, error));
 }
 
@@ -19,7 +19,7 @@ export function createUser (user, callback) {
 export function login(data, callback) {
     const { email, password } = data;
     auth.signInWithEmailAndPassword(email, password)
-        .then((user) => getUser(user, callback))
+        .then((resp) => getUser(resp.user, callback))
         .catch((error) => callback(false, null, error));
 }
 

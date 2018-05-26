@@ -7,15 +7,7 @@ let initialState = { isLoggedIn: false, user: null };
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case t.LOGGED_IN:
-            const user = action.data;
-
-            // Save token and data to Asyncstorage
-            AsyncStorage.multiSet([
-                ['user', JSON.stringify(user)]
-            ]);
-
-            state = Object.assign({}, state, { isLoggedIn: true, user: user });
-
+            state = Object.assign({}, state, { isLoggedIn: true, user: action.data.user });
             return state;
 
         case t.LOGGED_OUT:

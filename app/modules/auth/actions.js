@@ -28,6 +28,8 @@ export function login(data, successCB, errorCB) {
     return (dispatch) => {
         api.login(data, function (success, data, error) {
             if (success) {
+                // Save token and data to Asyncstorage
+                AsyncStorage.setItem('user', JSON.stringify(data.user));
                 if (data.exists) dispatch({type: t.LOGGED_IN, data: data.user});
                 successCB(data);
             }else if (error) errorCB(error)

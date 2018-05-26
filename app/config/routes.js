@@ -14,6 +14,7 @@ import Login from '../modules/auth/scenes/Login';
 import ForgotPassword from '../modules/auth/scenes/ForgotPassword';
 import Home from '../modules/home/scenes/Home';
 import Alimentation from '../modules/home/scenes/Alimentation';
+import ShowId from '../modules/home/scenes/ShowId';
 import ShowTraining from '../modules/home/scenes/ShowTraining';
 import TrainingScreen from '../modules/home/scenes/TrainingScreen';
 import ShowPlan from '../modules/home/scenes/ShowPlan';
@@ -74,6 +75,7 @@ class routes extends React.Component {
                         <Scene key="ShowTraining" component={ShowTraining} title="Información del entrenamiento"/>
                         <Scene key="TrainingScreen" component={TrainingScreen} title="En entrenamiento"/>
                         <Scene key="ShowPlan" component={ShowPlan} title="Plan alimenticio"/>
+                        <Scene key="ShowId" component={ShowId} title="Perfil"/>
                     </Stack>
                 </Scene>
             </Router>

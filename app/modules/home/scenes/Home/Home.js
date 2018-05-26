@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import React from 'react';
 var { View, StyleSheet, Alert, Text } = require('react-native');
 
@@ -19,9 +20,8 @@ const { color } = theme;
 class Home extends React.Component {
     constructor(){
         super();
-        var uData = AsyncStorage.getItem('user', (value) => {
-          JSON.parse(value)
-        });
+
+        var uData = null;
 
         this.state = {
             userData: uData,
@@ -40,11 +40,15 @@ class Home extends React.Component {
                     pdescription: 'Tomarse un shake'
                 }
             ]
-        }
+        };
 
         this.onSignOut = this.onSignOut.bind(this);
         this.onChangeScreen = this.onChangeScreen.bind(this);
         this.showTraining = this.showTraining.bind(this);
+    }
+
+    componentDidMount() {
+        console.log('rendered');
     }
 
     onSignOut() {
@@ -65,7 +69,7 @@ class Home extends React.Component {
         } else if (selectedIndex === 1) {
             Actions.Alimentation({ plans: this.state.plans })
         } else if (selectedIndex === 2) {
-            // pending
+            Actions.ShowId({plans: this.state.plans});
         }
     }
 
@@ -79,7 +83,7 @@ class Home extends React.Component {
             <View style={styles.container}>
                 <View style={styles.tabbar}>
                     <ButtonGroup
-                        buttons={['ENTRENAMIENTO', 'ALIMENTACIÓN', 'EXPLORAR']}
+                        buttons={['ENTRENAMIENTO', 'ALIMENTACIÓN', 'PERFIL']}
                         containerStyle={styles.buttonTabBar}
                         selectedIndex={0}
                         onPress={this.onChangeScreen}
