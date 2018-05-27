@@ -7,7 +7,7 @@ import { AsyncStorage } from 'react-native';
 import {Button, ButtonGroup, List, ListItem} from 'react-native-elements'
 import {Actions} from 'react-native-router-flux';
 import {connect} from 'react-redux';
-
+import { database, provider } from "../../../../config/firebase";
 import styles from "./styles"
 
 import { actions as auth, theme } from "../../../auth/index"
@@ -47,8 +47,19 @@ class Home extends React.Component {
         this.showTraining = this.showTraining.bind(this);
     }
 
-    componentDidMount() {
-        console.log('rendered');
+    async componentDidMount() {
+        console.log('mounted');
+        let value = await AsyncStorage.getItem('user');
+        let currentUser = JSON.parse(value);
+        let userData = database.ref('users').child(currentUser.uid);
+        let snapshot = await userData.once('value');
+        let trainings = snapshot.val().trainings || [];
+        let plans = snapshot.val().plans || [];
+        console.log(trainings, 'trainings');
+        this.setState({
+            trainings: trainings,
+            plans: plans
+        });
     }
 
     onSignOut() {
