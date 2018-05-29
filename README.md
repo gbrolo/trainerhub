@@ -1,4 +1,9 @@
 ﻿# Trainer Hub
+React Native application for athletes to keep track of their workout schedules and information.
+Visit also [TrainerHub - Trainer](https://github.com/gbrolo/trainerhub-trainer) for Trainer's app.
+
+Demonstration video available at [Youtube](https://youtu.be/Cawzr9mrMig).
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
